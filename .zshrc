@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/alextheobold/.oh-my-zsh"
+export ZSH="/Users/$USER/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
@@ -41,14 +41,5 @@ alias cu="composer update"
 alias cr="composer require"
 alias ci="composer install"
 
-# PHP Versions
-export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
-export PATH=~/.composer/vendor/bin:$PATH
+alias dotfiles='/usr/bin/git --git-dir=/Users/$USER/.dotfiles/ --work-tree=/Users/$USER'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
-export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-alias dotfiles='/usr/bin/git --git-dir=/Users/alextheobold/.dotfiles/ --work-tree=/Users/alextheobold'

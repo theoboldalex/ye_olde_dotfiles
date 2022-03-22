@@ -31,3 +31,4 @@ set ignorecase
 let mapleader = " "
 set number
 nmap <leader>rl :set relativenumber!<CR>
+map <leader>br <Action>(ToggleLineBreakpoint)
