@@ -94,6 +94,11 @@ require('telescope')
             buffers = {
                 theme = "dropdown",
                 previewer = false,
+            },
+            live_grep = {
+                theme = "dropdown",
+                hidden = true,
+                no_ignore = true
             }
         }   
     }
