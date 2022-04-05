@@ -1,5 +1,6 @@
 call plug#begin()
     Plug 'Mofiqul/vscode.nvim'
+    Plug 'morhetz/gruvbox'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ThePrimeagen/vim-be-good'
     Plug 'vim-airline/vim-airline'
@@ -33,14 +34,13 @@ set shiftwidth=4
 set background=dark
 set termguicolors
 
-let g:vscode_style = "dark"
-let g:airline_theme = "minimalist"
+let g:airline_theme = "gruvbox"
 let g:coc_snippet_next = '<tab>'
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 
-colorscheme vscode
+colorscheme gruvbox
 
 let mapleader=" "
 
@@ -53,6 +53,7 @@ nnoremap <leader>gb <cmd>Git blame<cr>
 nmap <leader>gs :G<CR>
 
 noremap <leader>rl :set relativenumber! <CR>
+nnoremap <leader>st :let &bg=(&bg=='light'?'dark':'light')<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
