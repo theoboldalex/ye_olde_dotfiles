@@ -32,7 +32,6 @@ set ignorecase
 set noswapfile
 set shiftwidth=4
 set background=dark
-set termguicolors
 
 let g:airline_theme = "gruvbox"
 let g:coc_snippet_next = '<tab>'
