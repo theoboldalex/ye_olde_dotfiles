@@ -66,6 +66,9 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
+map <leader>[ :call append(line('.')-1, '')<CR>
+map <leader>] :call append(line('.'), '')<CR>
+
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ?
