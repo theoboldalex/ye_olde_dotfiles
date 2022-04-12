@@ -32,4 +32,5 @@ let mapleader = " "
 set number
 nmap <leader>rl :set relativenumber!<CR>
 map <leader>br <Action>(ToggleLineBreakpoint)
-map <leader>xd <Action>(ViewToolBar) <Action>(PhpListenDebugAction)
+map <leader>xd <Action>(PhpListenDebugAction)
+map <leader>tt <Action>(ViewToolBar)
