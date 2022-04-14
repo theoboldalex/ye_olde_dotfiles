@@ -9,6 +9,7 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tmsvg/pear-tree'
     Plug 'tpope/vim-fugitive'
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 let g:coc_global_extensions = [
@@ -19,7 +20,8 @@ let g:coc_global_extensions = [
     \'coc-yaml',
     \'coc-eslint',
     \'coc-tsserver',
-    \'coc-python'
+    \'coc-python',
+    \'coc-go'
 \]
 
 set relativenumber
