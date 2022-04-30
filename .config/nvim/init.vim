@@ -55,6 +55,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
 nnoremap <leader>gd <cmd>Git diff<cr>
 nnoremap <leader>gb <cmd>Git blame<cr>
+nnoremap <leader>gp <cmd>Git push<cr>
 nmap <leader>gs :G<CR>
 
 noremap <leader>rl :set relativenumber! <CR>
