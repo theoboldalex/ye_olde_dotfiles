@@ -39,3 +39,6 @@ map <leader>tt <Action>(ViewToolBar)
 " TODO: figure out how to make these one action. Currently requires double undo
 map <leader>[ O<esc>j
 map <leader>] o<esc>k
+
+" search and replace
+map <leader>sr :%s/
