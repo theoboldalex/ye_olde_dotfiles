@@ -1,4 +1,5 @@
 call plug#begin()
+    Plug 'flazz/vim-colorschemes'
     Plug 'Mofiqul/vscode.nvim'
     Plug 'morhetz/gruvbox'
     Plug 'vim-airline/vim-airline-themes'
@@ -52,6 +53,7 @@ let mapleader=" "
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>gg <cmd>Telescope git_branches<cr>
 
 nnoremap <leader>gd <cmd>Git diff<cr>
 nnoremap <leader>gb <cmd>Git blame<cr>
