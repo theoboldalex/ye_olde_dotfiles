@@ -1,7 +1,5 @@
 call plug#begin()
-    Plug 'flazz/vim-colorschemes'
-    Plug 'Mofiqul/vscode.nvim'
-    Plug 'morhetz/gruvbox'
+    Plug 'gruvbox-community/gruvbox'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ThePrimeagen/vim-be-good'
     Plug 'vim-airline/vim-airline'
@@ -73,6 +71,7 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 
 map <leader>[ :call append(line('.')-1, '')<CR>
 map <leader>] :call append(line('.'), '')<CR>
+map <leader>ft <C-w>v :E<CR> :vertical resize 30<CR>
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
