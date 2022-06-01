@@ -60,7 +60,6 @@ nmap <leader>gs :G<CR>
 
 noremap <leader>rl :set relativenumber! <CR>
 nnoremap <leader>st :let &bg=(&bg=='light'?'dark':'light')<CR>
-nnoremap <leader>x :call ToggleNetrw()<CR> :vertical resize 40<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -83,22 +82,6 @@ inoremap <silent><expr> <TAB>
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-function! ToggleNetrw()
-    if g:NetrwIsOpen
-        let i = bufnr("$")
-        while (i >= 1)
-            if (getbufvar(i, "&filetype") == "netrw")
-                silent exe "bwipeout " . i 
-            endif
-            let i-=1
-        endwhile
-        let g:NetrwIsOpen=0
-    else
-        let g:NetrwIsOpen=1
-        silent Lexplore
-    endif
 endfunction
 
 lua << EOF
