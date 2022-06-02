@@ -1,8 +1,9 @@
 call plug#begin()
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'gruvbox-community/gruvbox'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'ThePrimeagen/vim-be-good'
     Plug 'vim-airline/vim-airline'
+    Plug 'ThePrimeagen/vim-be-good'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -20,19 +21,26 @@ let g:coc_global_extensions = [
     \'coc-eslint',
     \'coc-tsserver',
     \'coc-python',
-    \'coc-go'
+    \'coc-go',
+    \'coc-snippets'
 \]
 
+set autoindent
+set exrc
 set relativenumber
+set number
+set clipboard=unnamed
+set nowrap
 set colorcolumn=80
 set hidden
-set number
 set mouse=a
 set expandtab
 set ignorecase
 set noswapfile
 set shiftwidth=4
 set background=dark
+set updatetime=300
+set scrolloff=10
 
 let g:airline_theme = "gruvbox"
 let g:airline_section_z = "%l:%c"
@@ -56,9 +64,9 @@ nnoremap <leader>gg <cmd>Telescope git_branches<cr>
 nnoremap <leader>gd <cmd>Git diff<cr>
 nnoremap <leader>gb <cmd>Git blame<cr>
 nnoremap <leader>gp <cmd>Git push<cr>
-nmap <leader>gs :G<CR>
+nnoremap <leader>gs :G<CR>
 
-noremap <leader>rl :set relativenumber! <CR>
+nnoremap <leader>rl :set relativenumber! <CR>
 nnoremap <leader>st :let &bg=(&bg=='light'?'dark':'light')<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
@@ -67,6 +75,9 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 map <leader>[ :call append(line('.')-1, '')<CR>
 map <leader>] :call append(line('.'), '')<CR>
@@ -90,9 +101,9 @@ require('telescope')
         defaults = {
             file_ignore_patterns = {
                 "node%_modules/.*", 
-                "vendor",
-                ".git",
-                ".idea",
+                "vendor/",
+                ".git/",
+                ".idea/",
             } 
         },
         pickers = {
@@ -113,4 +124,13 @@ require('telescope')
             }
         }   
     }
+
+require'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true
+    },
+    indent = {
+        enable = true
+    }
+}
 EOF
