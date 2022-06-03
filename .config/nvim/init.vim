@@ -50,7 +50,6 @@ let g:coc_snippet_next = '<tab>'
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
-let g:NetrwIsOpen=0
 
 colorscheme gruvbox
 
