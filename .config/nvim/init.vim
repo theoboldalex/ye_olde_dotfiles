@@ -13,6 +13,7 @@ call plug#begin()
 call plug#end()
 
 let g:coc_global_extensions = [
+    \'coc-lua',
     \'coc-json', 
     \'coc-git', 
     \'coc-phpls', 
@@ -55,10 +56,12 @@ colorscheme gruvbox
 
 let mapleader=" "
 
+nnoremap <leader>x :w<CR> :so %<CR>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>gg <cmd>Telescope git_branches<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 nnoremap <leader>gd <cmd>Git diff<cr>
 nnoremap <leader>gb <cmd>Git blame<cr>
@@ -95,41 +98,5 @@ function! s:check_back_space() abort
 endfunction
 
 lua << EOF
-require('telescope')
-    .setup {
-        defaults = {
-            file_ignore_patterns = {
-                "node%_modules/.*", 
-                "vendor/",
-                ".git/",
-                ".idea/",
-            } 
-        },
-        pickers = {
-            find_files = {
-                theme = "dropdown",
-                previewer = false,
-                hidden = true,
-                no_ignore = true,
-            },
-            buffers = {
-                theme = "dropdown",
-                previewer = false,
-            },
-            live_grep = {
-                theme = "dropdown",
-                hidden = true,
-                no_ignore = true
-            }
-        }   
-    }
-
-require'nvim-treesitter.configs'.setup {
-    highlight = {
-        enable = true
-    },
-    indent = {
-        enable = true
-    }
-}
+require"future"
 EOF
