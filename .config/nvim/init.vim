@@ -97,6 +97,13 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+augroup skeleton
+    autocmd!
+    " add boilerplate to certain filetypes
+    autocmd bufnewfile *.php 0r $HOME/.config/nvim/templates/skeleton.php
+    autocmd bufnewfile *.sh 0r $HOME/.config/nvim/templates/skeleton.sh
+augroup END
+
 lua << EOF
 require"future"
 EOF
