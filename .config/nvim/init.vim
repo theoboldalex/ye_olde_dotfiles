@@ -103,6 +103,7 @@ augroup skeleton
     autocmd bufnewfile *.php 0r $HOME/.config/nvim/templates/skeleton.php
     autocmd bufnewfile *.php 5j
     autocmd bufnewfile *.sh 0r $HOME/.config/nvim/templates/skeleton.sh
+    autocmd bufnewfile *.sh 3j
 augroup END
 
 lua << EOF
