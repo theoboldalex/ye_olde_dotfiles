@@ -97,6 +97,12 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+fun! TrimWhiteSpace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
 augroup skeleton
     autocmd!
     " add boilerplate to certain filetypes
@@ -104,6 +110,11 @@ augroup skeleton
     autocmd bufnewfile *.php 5j
     autocmd bufnewfile *.sh 0r $HOME/.config/nvim/templates/skeleton.sh
     autocmd bufnewfile *.sh 3j
+augroup END
+
+augroup STANDARDS
+    autocmd!
+    autocmd bufwritepre * :call TrimWhiteSpace()
 augroup END
 
 lua << EOF
