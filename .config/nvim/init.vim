@@ -10,14 +10,15 @@ call plug#begin()
     Plug 'tmsvg/pear-tree'
     Plug 'tpope/vim-fugitive'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 let g:coc_global_extensions = [
     \'coc-lua',
-    \'coc-json', 
-    \'coc-git', 
-    \'coc-phpls', 
-    \'coc-sql', 
+    \'coc-json',
+    \'coc-git',
+    \'coc-phpls',
+    \'coc-sql',
     \'coc-yaml',
     \'coc-eslint',
     \'coc-tsserver',
@@ -43,7 +44,7 @@ set background=dark
 set updatetime=300
 set scrolloff=10
 
-let g:airline_theme = "gruvbox"
+let g:airline_theme = "nord"
 let g:airline_section_z = "%l:%c"
 
 let g:coc_snippet_next = '<tab>'
@@ -52,7 +53,7 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 
-colorscheme gruvbox
+colorscheme nord
 
 let mapleader=" "
 
