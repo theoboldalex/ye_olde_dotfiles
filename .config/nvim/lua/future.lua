@@ -1,12 +1,15 @@
+-- Run PHPUnit test suite
+vim.keymap.set('n', '<leader>pu', ':!./vendor/bin/phpunit<CR>')
+
 require('telescope')
     .setup {
         defaults = {
             file_ignore_patterns = {
-                "node%_modules/.*", 
+                "node%_modules/.*",
                 "vendor/",
                 ".git/",
                 ".idea/",
-            } 
+            }
         },
         pickers = {
             find_files = {
@@ -27,7 +30,7 @@ require('telescope')
             help_tags = {
                 theme = "dropdown"
             }
-        }   
+        }
     }
 
 require'nvim-treesitter.configs'.setup {
