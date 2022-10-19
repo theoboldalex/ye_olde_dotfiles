@@ -12,6 +12,7 @@ lua << EOF
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
+    Plug 'neovim/nvim-lspconfig'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'vim-airline/vim-airline'
     Plug 'ThePrimeagen/vim-be-good'
@@ -54,7 +55,6 @@ vim.keymap.set('n', '<leader>x', ':w<CR> :so %<CR>')
 vim.keymap.set('n', '<leader>[', ":call append(line('.')-1, '')<CR>")
 vim.keymap.set('n', '<leader>]', ":call append(line('.'), '')<CR>")
 
-
 -- git-fugitive
 vim.keymap.set('n', '<leader>gd', '<cmd>Git diff<cr>')
 vim.keymap.set('n', '<leader>gb', '<cmd>Git blame<cr>')
@@ -72,6 +72,7 @@ vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
-require"future"
+require'future'
+require'lsp'
 EOF
 
