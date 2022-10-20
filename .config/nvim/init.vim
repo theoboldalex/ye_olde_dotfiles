@@ -13,6 +13,12 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
     Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'L3MON4D3/LuaSnip'
+    Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'vim-airline/vim-airline'
     Plug 'ThePrimeagen/vim-be-good'
@@ -38,7 +44,7 @@ vim.g.netrw_altv = 1
 vim.opt.autoindent = true
 vim.opt.exrc = true
 vim.opt.relativenumber = true
-vim.opt.number = false
+vim.opt.number = true
 vim.opt.clipboard = 'unnamed'
 vim.opt.wrap = false
 vim.opt.colorcolumn = '80' -- dont't need this one for work repos
