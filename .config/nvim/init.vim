@@ -27,6 +27,7 @@ vim.call('plug#begin')
     Plug 'tmsvg/pear-tree'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-commentary'
+    Plug 'airblade/vim-gitgutter'
     Plug 'Lokaltog/vim-monotone'
     Plug 'gruvbox-community/gruvbox'
 vim.call('plug#end')
@@ -41,6 +42,7 @@ vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 3
 vim.g.netrw_altv = 1
 
+vim.opt.termguicolors = true
 vim.opt.autoindent = true
 vim.opt.exrc = true
 vim.opt.relativenumber = true

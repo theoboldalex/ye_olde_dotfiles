@@ -3,11 +3,18 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.opt.completeopt={'menu', 'menuone', 'noselect'}
 
+-- LSP highlight groups
+vim.cmd('hi DiagnosticError guifg=#ff4444')
+vim.cmd('hi DiagnosticWarn guifg=#dd9922')
+vim.cmd('hi DiagnosticInfo guifg=#3399ff')
+vim.cmd('hi DiagnosticHint guifg=#3399ff')
+
 require'lspconfig'.intelephense.setup {
     capabilities = capabilities,
     on_attach = function()
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer = 0})
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer = 0})
+        vim.keymap.set('n', 'gr', vim.lsp.buf.references, {buffer = 0})
         vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_next, {buffer = 0})
         vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, {buffer = 0})
         vim.keymap.set('n', '<leader>df', '<cmd>Telescope diagnostics<cr>', {buffer = 0})
