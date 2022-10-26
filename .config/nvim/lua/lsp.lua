@@ -21,6 +21,26 @@ require'lspconfig'.intelephense.setup {
     end
 }
 
+require'lspconfig'.sumneko_lua.setup {
+    capabilities = capabilities,
+    on_attach = function()
+        -- DRY this up
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer = 0})
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer = 0})
+        vim.keymap.set('n', 'gr', vim.lsp.buf.references, {buffer = 0})
+        vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_next, {buffer = 0})
+        vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, {buffer = 0})
+        vim.keymap.set('n', '<leader>df', '<cmd>Telescope diagnostics<cr>', {buffer = 0})
+    end,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
+
 local cmp = require'cmp'
 
 cmp.setup({
