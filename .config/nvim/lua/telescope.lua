@@ -1,6 +1,3 @@
--- Run PHPUnit test suite
-vim.keymap.set('n', '<leader>pu', ':!./vendor/bin/phpunit<CR>')
-
 require('telescope')
     .setup {
         defaults = {
