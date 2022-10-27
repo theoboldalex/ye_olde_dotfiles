@@ -1,17 +1,9 @@
-augroup skeleton
-    autocmd!
-    " add boilerplate to certain filetypes
-    autocmd bufnewfile *.php 0r $HOME/.config/nvim/templates/skeleton.php
-    autocmd bufnewfile *.php 5j
-    autocmd bufnewfile *.sh 0r $HOME/.config/nvim/templates/skeleton.sh
-    autocmd bufnewfile *.sh 3j
-augroup END
-
-lua << EOF
--- slowly move config here until we can fully migrate to init.lua
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
+    -- Home rolled plugins
+    Plug '~/plugins/snake.nvim'
+    -- Third party plugins
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp'
@@ -82,5 +74,4 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 require'future'
 require'lsp'
-EOF
-
+require'skeleton'
