@@ -1,9 +1,9 @@
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
-    -- Home rolled plugins
-    Plug '~/plugins/snake.nvim'
-    -- Third party plugins
+    -- my plugins
+    Plug '~/plugins/case_manager.nvim'
+    -- third party
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp'
@@ -21,27 +21,30 @@ vim.call('plug#begin')
     Plug 'tpope/vim-commentary'
     Plug 'airblade/vim-gitgutter'
     Plug 'Lokaltog/vim-monotone'
+    -- Plug 'arcticicestudio/nord-vim'
+    Plug 'theoboldalex/nord-night-vim'
+    Plug 'mattn/vim-goimports'
     Plug 'gruvbox-community/gruvbox'
 vim.call('plug#end')
 
 vim.g.mapleader = ' '
 
-vim.cmd('colorscheme monotone')
+vim.cmd('colorscheme nord')
 
-vim.g.airline_theme = 'minimalist'
+vim.g.airline_theme = 'nord'
 vim.g.airline_section_z = '%l:%c'
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 3
 vim.g.netrw_altv = 1
+vim.g.goimports = 1
 
-vim.opt.termguicolors = true
+vim.opt.termguicolors = false
 vim.opt.autoindent = true
 vim.opt.exrc = true
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.clipboard = 'unnamed'
 vim.opt.wrap = false
-vim.opt.colorcolumn = '80' -- dont't need this one for work repos
 vim.opt.expandtab = true
 vim.opt.ignorecase = true
 vim.opt.swapfile = false
@@ -50,10 +53,13 @@ vim.opt.updatetime = 300
 vim.opt.scrolloff = 10
 
 -- NORMAL MODE REMAPS -- 
+vim.keymap.set('n', '<leader>1', ':E<cr>')
 vim.keymap.set('n', '<leader>rl', ':set relativenumber! <cr>')
 vim.keymap.set('n', '<leader>x', ':w<CR> :so %<CR>')
 vim.keymap.set('n', '<leader>[', ":call append(line('.')-1, '')<CR>")
 vim.keymap.set('n', '<leader>]', ":call append(line('.'), '')<CR>")
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- git-fugitive
 vim.keymap.set('n', '<leader>gd', '<cmd>Git diff<cr>')
@@ -71,6 +77,9 @@ vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 -- VISUAL MODE REMAPS -- 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+-- JSON to PHP Associative array - visual select region first
+vim.keymap.set('c', '<leader>php', "s/{\\|}\\|\":/\\={'{':'[', '}':']', '\":':'\" =>'}[submatch(0)]/g<cr>")
 
 require'telescope_setup'
 require'lsp'
