@@ -1,5 +1,6 @@
 -- Nvim built in LSP config
 
+local nvim_lsp = require'lspconfig'
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.opt.completeopt={'menu', 'menuone', 'noselect'}
 
@@ -9,29 +10,26 @@ vim.cmd('hi DiagnosticWarn guifg=#dd9922')
 vim.cmd('hi DiagnosticInfo guifg=#3399ff')
 vim.cmd('hi DiagnosticHint guifg=#3399ff')
 
-require'lspconfig'.intelephense.setup {
-    capabilities = capabilities,
-    on_attach = function()
+local on_attach = function()
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer = 0})
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer = 0})
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, {buffer = 0})
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {buffer = 0})
         vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_next, {buffer = 0})
         vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, {buffer = 0})
         vim.keymap.set('n', '<leader>df', '<cmd>Telescope diagnostics<cr>', {buffer = 0})
+        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {buffer = 0})
+        vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, {buffer = 0})
     end
+
+nvim_lsp.intelephense.setup {
+    capabilities = capabilities,
+    on_attach = on_attach
 }
 
-require'lspconfig'.sumneko_lua.setup {
+nvim_lsp.sumneko_lua.setup {
     capabilities = capabilities,
-    on_attach = function()
-        -- DRY this up
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer = 0})
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer = 0})
-        vim.keymap.set('n', 'gr', vim.lsp.buf.references, {buffer = 0})
-        vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_next, {buffer = 0})
-        vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, {buffer = 0})
-        vim.keymap.set('n', '<leader>df', '<cmd>Telescope diagnostics<cr>', {buffer = 0})
-    end,
+    on_attach = on_attach,
     settings = {
         Lua = {
             diagnostics = {
@@ -39,6 +37,52 @@ require'lspconfig'.sumneko_lua.setup {
             }
         }
     }
+}
+
+nvim_lsp.tsserver.setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+}
+
+nvim_lsp.pyright.setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+}
+
+nvim_lsp.rust_analyzer.setup({
+    on_attach = on_attach,
+    settings = {
+        ["rust-analyzer"] = {
+            imports = {
+                granularity = {
+                    group = "module",
+                },
+                prefix = "self",
+            },
+            cargo = {
+                buildScripts = {
+                    enable = true,
+                },
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    }
+})
+
+nvim_lsp.gopls.setup {
+    capabilities = capabilities,
+    on_attach = function()
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer = 0})
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer = 0})
+        vim.keymap.set('n', 'gr', vim.lsp.buf.references, {buffer = 0})
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {buffer = 0})
+        vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_next, {buffer = 0})
+        vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, {buffer = 0})
+        vim.keymap.set('n', '<leader>df', '<cmd>Telescope diagnostics<cr>', {buffer = 0})
+        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {buffer = 0})
+    end
 }
 
 local cmp = require'cmp'
