@@ -3,6 +3,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
     -- my plugins
     Plug '~/plugins/case_manager.nvim'
+    Plug '$HOME/plugins/snake.nvim'
     -- third party
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-cmp'
@@ -30,6 +31,7 @@ vim.call('plug#end')
 vim.g.mapleader = ' '
 
 vim.cmd('colorscheme nord')
+vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
 
 vim.g.airline_theme = 'nord'
 vim.g.airline_section_z = '%l:%c'
@@ -60,6 +62,7 @@ vim.keymap.set('n', '<leader>[', ":call append(line('.')-1, '')<CR>")
 vim.keymap.set('n', '<leader>]', ":call append(line('.'), '')<CR>")
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', '<leader>h', '<cmd>nohlsearch<cr>')
 
 -- git-fugitive
 vim.keymap.set('n', '<leader>gd', '<cmd>Git diff<cr>')
