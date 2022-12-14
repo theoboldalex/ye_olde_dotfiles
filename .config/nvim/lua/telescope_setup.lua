@@ -6,7 +6,8 @@ require('telescope')
                 "vendor/",
                 ".git/",
                 ".idea/",
-            }
+            },
+            disable_devicons = false,
         },
         pickers = {
             find_files = {

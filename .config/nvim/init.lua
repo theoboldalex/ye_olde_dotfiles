@@ -1,10 +1,6 @@
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
-    -- my plugins
-    Plug '~/plugins/case_manager.nvim'
-    Plug '$HOME/plugins/snake.nvim'
-    -- third party
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp'
@@ -26,6 +22,9 @@ vim.call('plug#begin')
     Plug 'theoboldalex/nord-night-vim'
     Plug 'mattn/vim-goimports'
     Plug 'gruvbox-community/gruvbox'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'theoboldalex/case_manager.nvim'
 vim.call('plug#end')
 
 vim.g.mapleader = ' '
