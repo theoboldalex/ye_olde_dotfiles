@@ -16,9 +16,11 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+alias vc="cd $HOME/.config/nvim"
+alias plug="cd $HOME/plugins"
 alias vi="nvim"
 alias zshrc="nvim ~/.zshrc"
-alias vimrc="nvim ~/.config/nvim/init.vim"
+alias vimrc="nvim ~/.config/nvim/init.lua"
 alias srczsh="source ~/.zshrc"
 
 alias ga="git add"
