@@ -15,6 +15,7 @@ return require("packer").startup(function(use)
 
     -- VCS
     use("tpope/vim-fugitive")
+    use("airblade/vim-gitgutter")
 
     -- QoL
     use("tpope/vim-commentary")
