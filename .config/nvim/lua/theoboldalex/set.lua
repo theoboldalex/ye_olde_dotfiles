@@ -5,7 +5,8 @@ vim.g.netrw_altv = 1
 vim.g.goimports = 1
 vim.g.nord_italic = false
 
-vim.opt.termguicolors = false
+vim.opt.termguicolors = true
+vim.opt.guicursor = ""
 vim.opt.swapfile = false
 vim.opt.exrc = true
 vim.opt.relativenumber = true
