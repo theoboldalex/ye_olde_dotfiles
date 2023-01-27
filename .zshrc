@@ -32,7 +32,7 @@ alias nah='git reset --hard;git clean -df'
 alias d="docker"
 alias dc="docker-compose"
 alias dps="docker ps"
-alias art="php artisan"
+alias a="php artisan"
 
 alias python="python3"
 alias pip="pip3"
@@ -45,3 +45,5 @@ alias ci="composer install"
 
 alias dotfiles='/usr/bin/git --git-dir=/Users/$USER/.dotfiles/ --work-tree=/Users/$USER'
 
+alias phpdoc="phpdoc.sh"
+export PATH="$HOME/.config/bin:$PATH"

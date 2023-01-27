@@ -1,4 +1,7 @@
 window:
+  dimensions:
+    columns: 250
+    lines: 100
   padding:
     x: 16
     y: 16
@@ -77,3 +80,15 @@ scrolling:
   # Automatically scroll to the bottom when new text is written
   # to the terminal.
   auto_scroll: false
+
+key_bindings:
+  - { key: Key0, mods: Alt, chars: 'º' }
+  - { key: Key1, mods: Alt, chars: '¡' }
+  - { key: Key2, mods: Alt, chars: '€' }
+  - { key: Key3, mods: Alt, chars: '#' }
+  - { key: Key4, mods: Alt, chars: '¢' }
+  - { key: Key5, mods: Alt, chars: '∞' }
+  - { key: Key6, mods: Alt, chars: '§' }
+  - { key: Key7, mods: Alt, chars: '¶' }
+  - { key: Key8, mods: Alt, chars: '•' }
+  - { key: Key9, mods: Alt, chars: 'ª' }

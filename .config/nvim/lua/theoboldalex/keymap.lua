@@ -27,3 +27,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- JSON to PHP Associative array - visual select region first
 vim.keymap.set("c", "<leader>php", "s/{\\|}\\|\":/\\={'{':'[', '}':']', '\":':'\" =>'}[submatch(0)]/g<cr>")
+
+vim.keymap.set("n", "<leader>r", "<cmd>!php %")
+vim.keymap.set("n", "<leader>mx", "<cmd>!chmod +x %<cr>")
