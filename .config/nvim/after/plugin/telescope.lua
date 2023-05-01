@@ -5,6 +5,7 @@ require('telescope').setup {
 	    "vendor/",
 	    ".git/",
 	    ".idea/",
+	    ".vscode/",
 	}
     },
     pickers = {

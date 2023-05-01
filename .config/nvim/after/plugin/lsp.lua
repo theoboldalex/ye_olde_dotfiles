@@ -23,19 +23,17 @@ local on_attach = function ()
     vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>", opts)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
     vim.keymap.set("n", "<C-h>", vim.lsp.buf.signature_help, opts)
-    vim.keymap.set("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<CR>")
-    vim.keymap.set("n", "<leader>dp", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
-    vim.keymap.set("n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<CR>")
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 end
 
 lsp.ensure_installed({
   "tsserver",
-  "sumneko_lua",
   "intelephense",
-  "pyright"
+  "pyright",
+  "lua_ls"
 })
 
-lsp.configure("sumneko_lua", {
+lsp.configure("lua_ls", {
     on_attach = on_attach,
     settings = {
         Lua = {
@@ -59,6 +57,32 @@ lsp.configure("pyright", {
 
 lsp.configure("tsserver", {
     on_attach = on_attach
+})
+
+lsp.configure("rust_analyzer", {
+    on_attach = on_attach,
+    settings = {
+        ["rust-analyzer"] = {
+            imports = {
+                granularity = {
+                    group = "module",
+                },
+                prefix = "self",
+            },
+            cargo = {
+                buildScripts = {
+                    enable = true,
+                },
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    }
+})
+
+lsp.configure("gopls", {
+    on_attach = on_attach,
 })
 
 lsp.setup()

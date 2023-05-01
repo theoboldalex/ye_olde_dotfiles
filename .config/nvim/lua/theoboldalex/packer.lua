@@ -2,10 +2,10 @@ vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
     use "wbthomason/packer.nvim"
-    use "nvim-lualine/lualine.nvim"
+    -- use "nvim-lualine/lualine.nvim"
     use "nvim-treesitter/nvim-treesitter"
     use {
-        "nvim-telescope/telescope.nvim", tag = "0.1.0",
+        "nvim-telescope/telescope.nvim", tag = "0.1.1",
         requires = { {"nvim-lua/plenary.nvim"} }
     }
     use "nvim-tree/nvim-web-devicons"
@@ -19,6 +19,7 @@ return require("packer").startup(function(use)
 
     -- QoL
     use("tpope/vim-commentary")
+    use("ThePrimeagen/harpoon")
 
     -- LSP-ZERO
     use {
@@ -42,4 +43,7 @@ return require("packer").startup(function(use)
             {"rafamadriz/friendly-snippets"},
         }
     }
+
+    -- HOME ROLLED
+    use("theoboldalex/case_manager.nvim")
 end)

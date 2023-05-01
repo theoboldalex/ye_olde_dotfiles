@@ -12,6 +12,7 @@ vim.keymap.set("n", "<leader>h", "<cmd>nohlsearch<cr>")
 vim.keymap.set("n", "<leader>gd", "<cmd>Git diff<cr>")
 vim.keymap.set("n", "<leader>gb", "<cmd>Git blame<cr>")
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>")
+vim.keymap.set("n", "<leader>gc", ":Git checkout ")
 vim.keymap.set("n", "<leader>gs", ":G<cr>")
 
 -- telescope
@@ -28,5 +29,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- JSON to PHP Associative array - visual select region first
 vim.keymap.set("c", "<leader>php", "s/{\\|}\\|\":/\\={'{':'[', '}':']', '\":':'\" =>'}[submatch(0)]/g<cr>")
 
-vim.keymap.set("n", "<leader>r", "<cmd>!php %")
+-- Some common stuff
+vim.keymap.set("n", "<leader>r", "<cmd>!php %<cr>")
 vim.keymap.set("n", "<leader>mx", "<cmd>!chmod +x %<cr>")
+vim.keymap.set("n", "<leader>cm", "<cmd>CaseManager<cr>")
+vim.keymap.set("n", "<leader>jq", "<cmd>%!jq '.'<cr><cmd>w<cr>")

@@ -20,14 +20,16 @@ alias vc="cd $HOME/.config/nvim"
 alias plug="cd $HOME/plugins"
 alias vi="nvim"
 alias zshrc="nvim ~/.zshrc"
-alias vimrc="nvim ~/.config/nvim/init.lua"
+alias vimrc="cd $HOME/.config/nvim/ && nvim ."
 alias srczsh="source ~/.zshrc"
+alias sed="gsed"
 
 alias ga="git add"
 alias gcm="git commit -m"
 alias gs="git status"
 alias gp="git push"
 alias nah='git reset --hard;git clean -df'
+alias gch="git checkout"
 
 alias d="docker"
 alias dc="docker-compose"
@@ -47,3 +49,6 @@ alias dotfiles='/usr/bin/git --git-dir=/Users/$USER/.dotfiles/ --work-tree=/User
 
 alias phpdoc="phpdoc.sh"
 export PATH="$HOME/.config/bin:$PATH"
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
