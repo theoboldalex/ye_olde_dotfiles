@@ -51,6 +51,7 @@ alias phpdoc="phpdoc.sh"
 export PATH="$HOME/.config/bin:$PATH"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
+# load shortcuts to repos
 if [ -f $HOME/.config/zsh/repoalias ]; then
     source $HOME/.config/zsh/repoalias
 else
