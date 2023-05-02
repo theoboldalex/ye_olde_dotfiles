@@ -51,8 +51,8 @@ alias phpdoc="phpdoc.sh"
 export PATH="$HOME/.config/bin:$PATH"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
-if [ -f ~/.config/zsh/repoalias ]; then
-    source ~/.config/zsh/repoalias
+if [ -f $HOME/.config/zsh/repoalias ]; then
+    source $HOME/.config/zsh/repoalias
 else
     print "404: ~/.config/zsh/repoalias not found."
 fi
