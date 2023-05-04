@@ -22,7 +22,6 @@ local on_attach = function ()
     vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, opts)
     vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>", opts)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    vim.keymap.set("n", "<C-h>", vim.lsp.buf.signature_help, opts)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 end
 
