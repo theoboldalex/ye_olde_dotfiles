@@ -16,6 +16,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+alias cf="cd $HOME/.config"
 alias vc="cd $HOME/.config/nvim"
 alias plug="cd $HOME/plugins"
 alias vi="nvim"
