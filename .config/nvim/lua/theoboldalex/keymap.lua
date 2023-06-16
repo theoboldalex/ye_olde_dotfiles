@@ -14,6 +14,8 @@ vim.keymap.set("n", "<leader>gb", "<cmd>Git blame<cr>")
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>")
 vim.keymap.set("n", "<leader>gc", ":Git checkout ")
 vim.keymap.set("n", "<leader>gs", ":G<cr>")
+vim.keymap.set("n", "ga", "<cmd>diffget //2<cr>")
+vim.keymap.set("n", "g;", "<cmd>diffget //3<cr>")
 
 -- telescope
 vim.keymap.set("n", "<C-p>", "<cmd>Telescope find_files<cr>")
