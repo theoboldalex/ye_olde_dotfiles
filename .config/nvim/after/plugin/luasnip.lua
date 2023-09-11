@@ -14,8 +14,6 @@ end, { silent = true })
 
 vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<cr>")
 
--- snippets
-
 ls.add_snippets(
     nil,
     {
@@ -25,6 +23,13 @@ ls.add_snippets(
             ls.parser.parse_snippet("pubf", "public function $1($2): $3\n{\n\t$0\n}\n"),
             ls.parser.parse_snippet("prof", "protected function $1($2): $3\n{\n\t$0\n}\n"),
             ls.parser.parse_snippet("prif", "private function $1($2): $3\n{\n\t$0\n}\n"),
+            ls.parser.parse_snippet("tt", "$$this->$1")
+        },
+        javascript = {
+            ls.parser.parse_snippet("log", "console.log($1);")
+        },
+        typescript = {
+            ls.parser.parse_snippet("log", "console.log($1);")
         }
     }
 )

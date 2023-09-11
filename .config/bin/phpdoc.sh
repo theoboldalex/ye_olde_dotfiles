@@ -51,5 +51,5 @@ curl -s $base_uri/$doc_path | \
     xmllint --html --xpath "//div[@class='$tag_class']" - 2>/dev/null | \
     # TODO: need to do a better job of parsing this markup into a readable format
     sed 's/<[^>]*>//g; /^[[:space:]]*$/d; s/^[[:space:]]*//g' | \
-    perl -MHTML::Entities -pe 'decode_entities($_);' | \
+    php -r 'while(($line=fgets(STDIN)) !== false) echo html_entity_decode($line, ENT_QUOTES|ENT_HTML401);' | \
     less -R

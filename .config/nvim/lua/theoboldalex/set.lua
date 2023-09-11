@@ -19,7 +19,8 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.updatetime = 100
 vim.opt.scrolloff = 10
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
+vim.opt.hlsearch = false
 
 -- adds current git branch to status line
 vim.opt.statusline="%<%f %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%) %P"

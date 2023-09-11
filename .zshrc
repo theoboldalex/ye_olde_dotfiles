@@ -30,6 +30,7 @@ alias df='/usr/bin/git --git-dir=/Users/$USER/.dotfiles/ --work-tree=/Users/$USE
 alias nah='git reset --hard;git clean -df'
 
 export PATH="$HOME/.config/bin:$PATH"
+export GOPATH=$HOME/go
 
 # load shortcuts to repos
 if [ -f $HOME/.config/zsh/repoalias ]; then
@@ -37,3 +38,6 @@ if [ -f $HOME/.config/zsh/repoalias ]; then
 else
     print "404: ~/.config/zsh/repoalias not found."
 fi
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
