@@ -11,7 +11,7 @@ vim.keymap.set("n", "c]", ":cn<CR>zz")
 vim.keymap.set("n", "cx", ":ccl<CR>")
 
 -- vim-fugitive
-vim.keymap.set("n", "<leader>gb", "<cmd>Git blame<cr>")
+vim.keymap.set("n", "<leader>gb", "<cmd>Git blame -w<cr>")
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>")
 vim.keymap.set("n", "<leader>gc", ":Git checkout ")
 vim.keymap.set("n", "<leader>gs", ":G<cr>")
