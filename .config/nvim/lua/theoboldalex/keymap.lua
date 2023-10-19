@@ -24,16 +24,15 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
 vim.keymap.set("n", "<leader>gg", "<cmd>Telescope git_branches<cr>")
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+vim.keymap.set('n', '<leader>rg', function()
+	require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })
+end)
 
 -- VISUAL MODE REMAPS -- 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- JSON to PHP Associative array - visual select region first
-vim.keymap.set("c", "<leader>php", "s/{\\|}\\|\":/\\={'{':'[', '}':']', '\":':'\" =>'}[submatch(0)]/g<cr>")
-
 -- Some common stuff
-vim.keymap.set("n", "<leader>r", "<cmd>!php %<cr>")
 vim.keymap.set("n", "<leader>mx", "<cmd>!chmod +x %<cr>")
 vim.keymap.set("n", "<leader>cm", "<cmd>CaseManager<cr>")
 vim.keymap.set("n", "<leader>jq", "<cmd>%!jq '.'<cr><cmd>w<cr>")
