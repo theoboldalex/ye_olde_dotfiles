@@ -33,6 +33,7 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Some common stuff
+vim.keymap.set("n", "<leader>r", "<cmd>!php %<cr>")
 vim.keymap.set("n", "<leader>mx", "<cmd>!chmod +x %<cr>")
 vim.keymap.set("n", "<leader>cm", "<cmd>CaseManager<cr>")
 vim.keymap.set("n", "<leader>jq", "<cmd>%!jq '.'<cr><cmd>w<cr>")
